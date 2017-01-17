@@ -1,0 +1,24 @@
+ let's start
+                  200  LINES
+                  200  MICROSTATES
+                  200  ELEMENTS
+                    3  VARIABLES
+ Coordinates readed
+ Computing distances
+........................................................................ 
+ TOTAL NUMBER OF CLUSTERS:                    7
+ CLUSTER:                    1 border rho:  0.181707680     center rho:   1.00000000    
+ cluster elements:                   21 halo elements:                    8
+ CLUSTER:                    2 border rho:  0.382474214     center rho:  0.971157372    
+ cluster elements:                   21 halo elements:                    7
+ CLUSTER:                    3 border rho:  0.362486482     center rho:  0.916678607    
+ cluster elements:                   14 halo elements:                    8
+ CLUSTER:                    4 border rho:   7.21439347E-02 center rho:  0.719246328    
+ cluster elements:                   51 halo elements:                   21
+ CLUSTER:                    5 border rho:  0.440813363     center rho:  0.692923009    
+ cluster elements:                   34 halo elements:                    3
+ CLUSTER:                    6 border rho:  0.481225371     center rho:  0.690704167    
+ cluster elements:                   25 halo elements:                    4
+ CLUSTER:                    7 border rho:  0.622363806     center rho:  0.573689520    
+ cluster elements:                   34 halo elements:                    0
+ CORE SIZE=                   51

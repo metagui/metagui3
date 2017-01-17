@@ -1,0 +1,8 @@
+# No dihedral PHI for residue ALA1: out of selection
+TORSION ATOMS=1,5,11,13  LABEL=ALA1_PSI
+TORSION ATOMS=11,13,15,21  LABEL=ALA2_PHI
+TORSION ATOMS=13,15,21,23  LABEL=ALA2_PSI
+TORSION ATOMS=21,23,25,31  LABEL=ALA3_PHI
+# No dihedral PSI for residue ALA3: out of selection
+# The above list contains 4 backbone torsion CVs
+
