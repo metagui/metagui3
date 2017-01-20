@@ -1173,7 +1173,7 @@ Use the \"Merge\" function to merge the existing and new CVs into new COLVAR fil
 
 	# build the frame, add it to the notebook
 	ttk::frame $w.hlf.nb.adv 
-	$w.hlf.nb add $w.hlf.nb.adv -text "Advanced Settings"  -sticky nsew
+	$w.hlf.nb add $w.hlf.nb.adv -text "Advanced settings"  -sticky nsew
 
 	# allow frame to change width with window
 	variable wadv $w.hlf.nb.adv

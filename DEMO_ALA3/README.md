@@ -1,7 +1,7 @@
 (Alanine)3 Demo for Metagui
 ===========================
 
-Usage - assuming that metagui2 is installed properly:
+Usage - assuming that METAGUI3 is installed properly:
 
 1. Start the plugin.
 

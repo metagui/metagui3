@@ -21,27 +21,28 @@ space representation of microstates and their atomic structure
 representation, which greatly facilitates the set-up and analysis of
 molecular dynamics trajectories.
 
-METAGUI can read the output of the PLUMED 1.3 and 2.x engines, making
+METAGUI can read the output of the [PLUMED] 1.3 and 2.x engines, making
 it compatible with a number of different molecular dynamics packages
 like AMBER, NAMD, GROMACS and several others. 
 
 [Rodriguez-Laio 2014]: http://www.sciencemag.org/content/344/6191/1492.abstract
-
+[PLUMED]: http://www.plumed.org/
 
 
 How to get it
 -------------
 
-Please find the latest release on GitHub at <https://github.com/tonigi/metagui2>.
+Please find the latest release on GitHub at <https://github.com/metagui/metagui3>.
 
 
 
 Installation instructions
 -------------------------
 
-The tool should be installed so that its root directory is somewhere
-in TCL's "auto path". Therefore, either move it into VMD's plugin
-directory, or add the following instructions to your `.vmdrc` file 
+First, the tool should be installed so that its root directory is
+somewhere in TCL's "auto_path". Therefore, either move it into VMD's
+plugin directory, or add the following instructions to your `.vmdrc`
+file
 
         lappend auto_path /WHERE/YOU/EXTRACTED/THE/TOOL
         vmd_install_extension metagui3 metagui3::metagui "Analysis/Metagui 3.0"
@@ -50,16 +51,26 @@ directory, or add the following instructions to your `.vmdrc` file
 Alternatively, you can set TCL's auto path via the `TCLLIBPATH`
 environment variable.
 
+You will also need to compile the FORTRAN code provided in the `src`
+subdirectory (GNU gfortran is recommended): issue
+
+        make
+		
+in the top directory. This should generate the executable
+`metagui_util.x`. The plugin should automatically detect the location
+of the executable. If it doesn't please copy it somewhere in your
+PATH, or set the location in the "Advanced settings" tab.
+
 
 
 Quickstart
 ----------
 
-For now, just source the code as follows
+Just source the code as follows
 
         vmd -e run_metagui3.tcl
 
-or, if you want to run from the demo directory
+or, if you want to run from the DEMO_ALA3 directory
 
         TCLLIBPATH=.. vmd -e ../run_metagui3.tcl
 
@@ -70,9 +81,11 @@ See the read me file in that directory.
 Authors
 -------
 
-The METAGUI 3.0 code builds upon from METAGUI 2.0 (written by Xevi
-Biarnés, Fabio Pietrucci, Fabrizio Marinelli, Alessandro Laio) with
-additions by Alex Rodriguez, Alessandro Laio and Toni Giorgino.
+The METAGUI 3.0 code builds upon
+[METAGUI 2.0](http://dx.doi.org/10.1016/j.cpc.2011.08.020), written by
+Xevi Biarnés, Fabio Pietrucci, Fabrizio Marinelli, Alessandro Laio.
+Additions were made by Alex Rodriguez, Alessandro Laio and Toni
+Giorgino.
 
 
 License
@@ -104,13 +117,12 @@ http://www.nemethi.de/ .
 Citation
 --------
 
-To be updated. Citation for the old version is
+If you publish results obtained with METAGUI 3, please cite the
+following paper
 
-> Xevi Biarnés, Fabio Pietrucci, Fabrizio Marinelli, Alessandro Laio,
-> *METAGUI. A VMD interface for analyzing metadynamics and molecular
-> dynamics simulations*, Computer Physics Communications, Volume 183,
-> Issue 1, January 2012, Pages 203-211, ISSN 0010-4655,
-> <http://dx.doi.org/10.1016/j.cpc.2011.08.020>.
+> Giorgino T, Laio A, Rodriguez A. METAGUI 3: a graphical user
+> interface for choosing the collective variables in molecular
+> dynamics simulations. (Submitted.)
 
 
 The "smart clustering" algorithm is described in
