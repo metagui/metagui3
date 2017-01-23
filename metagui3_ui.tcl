@@ -89,10 +89,9 @@ See Rodriguez, A. & Laio, A. Clustering by fast search and find of density peaks
 Keys F, D and E switch the 3D display mode; key P picks the microstate.   (Only available after analysis.)"
 
     # Help for Plumed-GUI integration
-    variable plumedgui_button_help "You can define collective variables on-the-fly entering a PLUMED script in Plumed-GUI.\n
-Selecting \"evaluate\" will run PLUMED's \"driver\" on each of the trajectory files listed.\n
-The newly defined collective variables will be available for analysis (listed in green color).\n
-Use the \"Merge\" function to merge the existing and new CVs into new COLVAR files."
+    variable plumedgui_button_help "You can define collective variables on-the-fly entering a PLUMED script in Plumed-GUI (started with the \"Open editor\" button; see its documentation).\n
+Selecting either \"Replace\" or \"Append\" will run the script on the loaded trajectories, thus creating new CVs. The new CVs will either substitute (\"Replace\") or be used along with (\"Append\") the ones already defined. The newly-evaluated CVs will show up with a green background in the CV list pane below.\n
+The \"Write\" button merges existing and new CVs into new COLVAR files."
 
 
     # Browse icon
@@ -840,11 +839,11 @@ Use the \"Merge\" function to merge the existing and new CVs into new COLVAR fil
 	labelframe $in1.plumedgui -text "Define new CVs on-the-fly with Plumed-GUI" -padx 2m -pady 2m
 	pack [button $in1.plumedgui.help -bitmap questhead -command ::metagui3::plumedgui_help] -side right
 	pack \
-	    [button $in1.plumedgui.open -text "Open CV\neditor" -command "metagui3::plumedgui_open" ] \
-	    [button $in1.plumedgui.eval_replace -text "Evaluate and\nreplace current" -command "metagui3::plumedgui_replace" ] \
-	    [button $in1.plumedgui.eval_append -text "Evaluate and\nappend" -command "metagui3::plumedgui_append" ] \
+	    [button $in1.plumedgui.open -text "Open editor" -command "metagui3::plumedgui_open" ] \
+	    [button $in1.plumedgui.eval_replace -text "Replace" -command "metagui3::plumedgui_replace" ] \
+	    [button $in1.plumedgui.eval_append -text "Append" -command "metagui3::plumedgui_append" ] \
 	    [label $in1.plumedgui.spacer1 -text "      " ] \
-	    [button $in1.plumedgui.rewrite -text "Merge existing\nand new CVs" -command "metagui3::plumedgui_combine" ] \
+	    [button $in1.plumedgui.rewrite -text "Write" -command "metagui3::plumedgui_combine" ] \
 	    [label $in1.plumedgui.prefixlabel -text "into files named" ] \
 	    [entry $in1.plumedgui.prefix -width 15 -background white -textvariable metagui3::plumedgui_combined_prefix ] \
 	    [label $in1.plumedgui.spacer2 -text "      " ] \
