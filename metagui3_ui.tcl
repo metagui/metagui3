@@ -54,15 +54,16 @@ namespace eval ::metagui3:: {
 
     # URLs - to revise
     variable citation_url "http://www.sciencedirect.com/science/article/pii/S0010465511003079"
-    variable help_url "http://people.sissa.it/~laio/Publications/abstracts/65.php"
+    variable website_url "https://github.com/metagui/metagui3"
 
     # About message
     variable about_message "Current version: [package present metagui3]
 
-Please cite the following paper below when publishing results
-obtained with this tool:
+When publishing results obtained using this tool, please cite the following paper:
 
-FIXME"
+(Under review; provisional title)
+METAGUI 3: a graphical user interface for choosing the collective variables in molecular dynamics simulations. 
+"
 
     # Help for the decision plane procedure
     variable smart_clustering_help "Identify a region of isolated points in the high-$u8_rho, high-$u8_delta region of the decision plane.
@@ -89,8 +90,8 @@ See Rodriguez, A. & Laio, A. Clustering by fast search and find of density peaks
 Keys F, D and E switch the 3D display mode; key P picks the microstate.   (Only available after analysis.)"
 
     # Help for Plumed-GUI integration
-    variable plumedgui_button_help "You can define collective variables on-the-fly entering a PLUMED script in Plumed-GUI (started with the \"Open editor\" button; see its documentation).\n
-Selecting either \"Replace\" or \"Append\" will run the script on the loaded trajectories, thus creating new CVs. The new CVs will either substitute (\"Replace\") or be used along with (\"Append\") the ones already defined. The newly-evaluated CVs will show up with a green background in the CV list pane below.\n
+    variable plumedgui_button_help "You can define collective variables on-the-fly entering a PLUMED script in Plumed-GUI (started with the \"Define\" button; see its documentation).\n
+Selecting either \"Replace\" or \"Append\" will run the script on the loaded trajectories, thus creating new CVs. The new CVs will either substitute (\"Replace\") or be used along with (\"Append\") the ones already loaded. The newly-evaluated CVs will be highlighted in green in the CV list pane below.\n
 The \"Write\" button merges existing and new CVs into new COLVAR files."
 
 
@@ -741,8 +742,8 @@ The \"Write\" button merges existing and new CVs into new COLVAR files."
 	ttk::label $w.status.msg -textvariable metagui3::status_msg
 	ttk::button $w.status.about -text "About" \
 	    -command metagui3::help_about
-	ttk::button $w.status.manual -text "Manual" \
-	    -command "vmd_open_url $metagui3::help_url"
+	ttk::button $w.status.manual -text "Website" \
+	    -command "vmd_open_url $metagui3::website_url"
 	ttk::button $w.status.citation -text "Citation" \
 	    -command "vmd_open_url $metagui3::citation_url"
 	pack $w.status.msg $w.status.about $w.status.manual $w.status.citation -side left
@@ -839,7 +840,7 @@ The \"Write\" button merges existing and new CVs into new COLVAR files."
 	labelframe $in1.plumedgui -text "Define new CVs on-the-fly with Plumed-GUI" -padx 2m -pady 2m
 	pack [button $in1.plumedgui.help -bitmap questhead -command ::metagui3::plumedgui_help] -side right
 	pack \
-	    [button $in1.plumedgui.open -text "Open editor" -command "metagui3::plumedgui_open" ] \
+	    [button $in1.plumedgui.open -text "Define" -command "metagui3::plumedgui_open" ] \
 	    [button $in1.plumedgui.eval_replace -text "Replace" -command "metagui3::plumedgui_replace" ] \
 	    [button $in1.plumedgui.eval_append -text "Append" -command "metagui3::plumedgui_append" ] \
 	    [label $in1.plumedgui.spacer1 -text "      " ] \
@@ -1441,8 +1442,7 @@ The \"Write\" button merges existing and new CVs into new COLVAR files."
 	wm iconname $wabo "About" 
 #	wm minsize  $wabo 220 200  
 
-	label $wabo.l1 -font "bold" \
-	    -text "METAGUI - A Unified Analysis Tool for Long-scale MD Simulations" 
+	label $wabo.l1 -text "METAGUI - A Unified Analysis Tool for Long-scale MD Simulations" 
 	label $wabo.l2 -text $about_message
         button $wabo.ok -text "Got it" -command "destroy $wabo"
 
