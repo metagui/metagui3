@@ -53,7 +53,7 @@ namespace eval ::metagui3:: {
     variable plumedgui_combined_prefix COMBINED
 
     # URLs - to revise
-    variable citation_url "http://www.sciencedirect.com/science/article/pii/S0010465511003079"
+    variable citation_url "http://www.sciencedirect.com/science/article/pii/S0010465517301236"
     variable website_url "https://github.com/metagui/metagui3"
 
     # About message

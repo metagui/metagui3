@@ -122,7 +122,7 @@ following paper
 
 > Giorgino T, Laio A, Rodriguez A. METAGUI 3: a graphical user
 > interface for choosing the collective variables in molecular
-> dynamics simulations. (Submitted.)
+> dynamics simulations. Computer Physics Communications. <https://doi.org/10.1016/j.cpc.2017.04.009>
 
 
 The "smart clustering" algorithm is described in
